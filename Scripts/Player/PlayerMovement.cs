@@ -36,6 +36,10 @@ public class PlayerMovement : MonoBehaviour
 	{
 		if (dead) return;
 
+		Vector2 velocity = _rigidbody.velocity;
+		float angle = Mathf.Atan2(velocity.y, 10) * Mathf.Rad2Deg;
+		transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle - 88));
+
 		// Touch Controls:
 		if (Input.touchCount > 0)
 		{
